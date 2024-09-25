@@ -25,12 +25,12 @@ img {
   width: 100%;
 }
 
-.container { 
-  max-width: 1158px;
-  padding-left: 15px;
-  padding-right: 15px;
-  margin-left:  auto;
-  margin-right:  auto;
+.container {
+  max-width: 320px;
+  padding-left: 16px;
+  padding-right: 16px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .visually-hidden {
@@ -47,8 +47,28 @@ img {
 }
 
 .section {
-  padding: 120px 0;
+  padding: 96px 0;
 }
+
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 768px;
+  }
+}
+
+@media screen and (min-width: 1158px) {
+  .container {
+    max-width: 1158px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .section {
+    padding: 120px 0;
+  }
+}
+
+/* HEADER */
 
 .page-header {
   border-bottom: 1px solid #e7e9fc;
@@ -133,9 +153,11 @@ img {
   color: #404bbf;
 }
 
+/* HERO */
+
 .page-hero {
   margin: 0 auto;
-  padding: 188px 0;
+  padding: 72px 0;
   max-width: 1440px;
   background-color: #2e2f42;
   background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(../images/people-office.jpg);
@@ -146,10 +168,10 @@ img {
 }
 
 .hero-title {
-  max-width: 496px;
-  margin: 0 auto 48px auto;
+  max-width: 216px;
+  margin: 0 auto 72px auto;
   font-weight: 700;
-  font-size: 56px;
+  font-size: 36px;
   line-height: 1.07;
   letter-spacing: 0.02em;
   color: #fff;
@@ -178,45 +200,109 @@ img {
   background-color: #404bbf;
 }
 
-.features-list {
-  display: flex;
-  gap: 24px;
+@media screen and (min-width: 768px) {
+  .hero-title {
+    max-width: 496px;
+    margin-bottom: 36px;
+    font-size: 56px;
+    line-height: 1.11;
+  }
 }
 
-.features-item {
-  flex-basis: calc((100% - 3 * 24px) / 4);
+@media screen and (min-width: 1158px) {
+  .page-hero {
+    padding: 188px 0;
+  }
+
+  .hero-title {
+    margin-bottom: 48px;
+  }
+}
+
+/* FEATURES */
+
+.features-list {
+  display: flex;
+  flex-direction: column;
+  row-gap: 72px;
 }
 
 .features-icon-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 112px;
-  padding: 24px 0;
-  margin-bottom: 8px;;
-  border: 1px solid #8e8f99;
-  border-radius: 4px;
-  background-color: #f4f4fd;
-}
-
-.features-icon-wrapper .icon {
-  display: block;
-  margin: 0 auto;
+  display: none;
 }
 
 .item-title {
   margin-bottom: 8px;
-  font-weight: 500;
-  font-size: 20px;
-  line-height: 1.2;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.11;
   letter-spacing: 0.02em;
+  text-align: center;
   color: #2e2f42;
 }
 
 .item-text {
   font-size: 16px;
   line-height: 1.5;
+  font-weight: 500;
 }
+
+@media screen and (min-width: 768px) {
+  .features-list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    column-gap: 24px;
+  }
+
+  .features-item {
+    flex-basis: calc((100% - 1 * 24px) / 2);
+  }
+
+  .item-title {
+    text-align: start;
+  }
+}
+
+@media screen and (min-width: 1158px) {
+  .features-list {
+    gap: 24px;
+  }
+
+  .features-item {
+    flex-basis: calc((100% - 3 * 24px) / 4);
+  }
+
+  .features-icon-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 112px;
+    padding: 24px 0;
+    margin-bottom: 8px;;
+    border: 1px solid #8e8f99;
+    border-radius: 4px;
+    background-color: #f4f4fd;
+  }
+
+  .features-icon-wrapper .icon {
+    display: block;
+    margin: 0 auto;
+  }
+
+  .item-title {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 1.2;
+    letter-spacing: 0.02em;
+    color: #2e2f42;
+  }
+
+  .item-text {
+    font-weight: 400;
+  }
+}
+
+/* TEAM */
 
 .team {
   background-color: #f4f4fd;
@@ -235,11 +321,12 @@ img {
 
 .team-list {
   display: flex;
-  gap: 24px;
+  flex-direction: column;
+  gap: 72px;
+  margin: 0 8px;
 }
 
 .team-item {
-  flex-basis: calc((100% - 3 * 24px) / 4);
   border-radius: 0 0 4px 4px;
   text-align: center;
   background-color: #fff;
@@ -250,8 +337,21 @@ img {
   padding: 32px 0;
 }
 
-.team-item .item-text {
+.team-item .item-title {
   margin-bottom: 8px;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  text-align: center;
+  color: #2e2f42;
+}
+
+.team-item .item-text {
+  font-weight: 400;
+  margin-bottom: 8px;
+  font-size: 16px;
+  line-height: 1.5;
 }
 
 .social-links-list {
@@ -281,16 +381,56 @@ img {
   fill: currentColor;
 }
 
+@media screen and (min-width: 768px) {
+  .team-list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+
+  .team-item {
+    flex-basis: calc((100% - 1 * 24px) / 2);
+  }
+}
+
+@media screen and (min-width: 1158px) {
+  .team-list {
+    gap: 24px;
+  }
+
+  .team-item {
+    flex-basis: calc((100% - 3 * 24px) / 4);
+  }
+}
+
+/* PORTFOLIO */
+
 .portfolio-list {
   display: flex;
-  flex-wrap: wrap;
-  gap: 24px;
+  flex-direction: column;
   row-gap: 48px;
 }
 
 .portfolio-item {
   flex-basis: calc((100% - 2 * 24px) / 3);
   transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.portfolio-item .item-title {
+  margin-bottom: 8px;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  text-align: start;
+  color: #2e2f42;
+}
+
+.portfolio-item .item-text {
+  font-weight: 400;
+  margin-bottom: 8px;
+  font-size: 16px;
+  line-height: 1.5;
 }
 
 .portfolio-item:hover,
@@ -331,6 +471,26 @@ img {
   border-left: 1px solid #e7e9fc;
   border-right: 1px solid #e7e9fc;
 }
+
+@media screen and (min-width: 768px) {
+  .portfolio-list {
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 24px;
+  }
+
+  .portfolio-item {
+    flex-basis: calc((100% - 1 * 24px) / 2);
+  }
+}
+
+@media screen and (min-width: 1158px) {
+  .portfolio-item {
+    flex-basis: calc((100% - 2 * 24px) / 3);
+  }
+}
+
+/* FOOTER */
 
 .page-footer {
   padding: 100px 0;
@@ -444,6 +604,16 @@ img {
   margin-left: 16px;
   fill: currentColor;
 }
+
+@media screen and (min-width: 768px) {
+  
+}
+
+@media screen and (min-width: 1158px) {
+  
+}
+
+/* MODAL */
 
 .backdrop.is-open {
   position: fixed;
@@ -653,4 +823,12 @@ img {
 
 .btn-send:hover {
   background-color: #4d5ae5;
+}
+
+@media screen and (min-width: 768px) {
+  
+}
+
+@media screen and (min-width: 1158px) {
+  
 }
